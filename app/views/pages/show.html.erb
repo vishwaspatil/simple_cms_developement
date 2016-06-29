@@ -1,0 +1,35 @@
+<% if !flash[:notice].blank? %>
+ 	<div class= "notice">
+ 		<%= flash[:notice]  %>
+ 	</div>
+ <%end %>
+<%= link_to "<< back to list", :action => "index", :class => "back_link" %>
+<div class="page show">
+	<h2>Show page</h2>
+	<table summary="page detail view">
+	<tr>
+		<th>Name	</th>
+		<td><%= @pages.name %></td>
+	</tr>
+	<tr>
+		<th>permalink</th>
+		<td><%= @pages.permalink %>	</td>
+	</tr>
+	<tr>
+		<th>position</th>
+		<td><%= @pages.position %>	</td>
+	</tr>
+	<tr>
+		<th>visible	</th>
+		<td><%= @pages.visible ? 'true' : 'false' %>	</td>
+	</tr>
+	<tr>
+		<th>Created	</th>
+		<td><%= @pages.created_at %></td>
+	</tr>
+	<tr>
+		<th>update	</th>
+		<td><%= @pages.updated_at %>	</td>
+	</tr>
+	 </table>
+</div>

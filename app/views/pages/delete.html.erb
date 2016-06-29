@@ -1,0 +1,17 @@
+<% if !flash[:notice].blank? %>
+ 	<div class= "notice">
+ 		<%= flash[:notice]  %>
+ 	</div>
+ <%end %>
+<%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
+<div class="page delete">
+	<h2>Page deletes</h2>
+
+	<%= form_for(:pages, :url => { :action => 'destroy', :id => @pages.id } ) do |f| %>
+		<p>are you sure you want delete this Page?</p>
+		<p class="reference-name"> <%= @pages.name%></p>
+		<div class="form-buttons">
+			<%= submit_tag("Delete Page")%>
+		</div>
+	<% end %>
+</div>

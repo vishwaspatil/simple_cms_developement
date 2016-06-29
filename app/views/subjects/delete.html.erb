@@ -1,0 +1,17 @@
+<% if !flash[:notice].blank? %>
+ 	<div class= "notice">
+ 		<%= flash[:notice]  %>
+ 	</div>
+ <%end %>
+<%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
+<div class="subjects delete">
+	<h2>Subject deletes</h2>
+
+	<%= form_for(:subject, :url => { :action => 'destroy', :id => @subject.id } ) do |f| %>
+		<p>are you sure you want delete this subject?</p>
+		<p class="reference-name"> <%= @subject.name%></p>
+		<div class="form-buttons">
+			<%= submit_tag("Delete Subject")%>
+		</div>
+	<% end %>
+</div>
