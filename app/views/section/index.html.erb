@@ -1,2 +1,31 @@
-<h1>Section#index</h1>
-<p>Find me in app/views/section/index.html.erb</p>
+
+<div class= "section index">
+	<h2>Sections</h2>
+	 <%= link_to "Add new section",{ :action => 'new'}, :class_name => 'action new'  %>
+	 <table class="listing" summary="section list">
+	 	<tr class="header">
+		 	<th>&nbsp;</th>
+		 	<th>page_id</th>
+		 	<th>name</th>
+		 	<th>position </th>
+		 	<th>visible</th>
+		 	<th>content_type</th>
+		 	<th>content</th>
+	 	</tr>
+	 	<% @sections.each do |section| %>
+	 	<tr>
+	 		<td><%= section.page_id %></td>
+	 		<td><%= section.name %></td>
+	 		<td><%= section.position%></td>
+	 		<td><%= status_tag(section.visible) %></td>
+	 		<td><%= section.content_type %></td>
+	 		<td><%= section.content %></td>
+	 		<td class="action">
+	 			 <%= link_to "show", {:action => 'show', :id => section.id }, :class_name => "action_show" %>
+	 			 <%= link_to "edit", { :action => 'edit', :id => section.id}, :class_name => "action_edit" %>
+	 			<%= link_to "delete", {:action => 'delete', :id => section.id}, :class_name => "action_delete" %>
+	 		</td>
+	 	</tr>
+	 	<% end %>
+	 </table>
+</div>
