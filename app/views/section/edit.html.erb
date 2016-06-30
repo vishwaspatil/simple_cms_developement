@@ -1,2 +1,37 @@
-<h1>Section#edit</h1>
-<p>Find me in app/views/section/edit.html.erb</p>
+ <%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
+
+
+ <div class="section edit">
+ 	<h2>update sections</h2>
+ 	<%= form_for(:sections, :url => { :action => 'update', :id => @sections.id } ) do |f| %>
+ 		<table summary="Subject form field">
+ 			<tr>
+ 				<th>Page id</th>
+ 				<td><%= f.text_field(:page_id) %></td>
+ 			</tr>
+ 			<tr>
+ 				<th>Name</th>
+ 				<td><%= f.text_field(:name) %></td>
+ 			</tr>
+ 			<tr>
+ 				<th>position</th>
+ 				<td><%= f.text_field(:position) %></td>
+ 			</tr>
+ 			<tr>
+ 				<th>Visible</th>
+ 				<td><%= f.text_field(:visible) %></td>
+ 			</tr>
+ 			<tr>
+ 				<th>Content Type</th>
+ 				<td><%= f.text_field(:content_type) %></td>
+ 			</tr>
+ 			<tr>
+ 				<th>Content</th>
+ 				<td><%= f.text_field(:content) %></td>
+ 			</tr>
+ 		</table>
+ 		<div class="form buttons">
+ 			<%= submit_tag("update Section")%>
+ 		</div>
+ 	<% end %>
+ </div>

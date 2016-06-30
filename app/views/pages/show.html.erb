@@ -1,8 +1,4 @@
-<% if !flash[:notice].blank? %>
- 	<div class= "notice">
- 		<%= flash[:notice]  %>
- 	</div>
- <%end %>
+
 <%= link_to "<< back to list", :action => "index", :class => "back_link" %>
 <div class="page show">
 	<h2>Show page</h2>
@@ -21,7 +17,7 @@
 	</tr>
 	<tr>
 		<th>visible	</th>
-		<td><%= @pages.visible ? 'true' : 'false' %>	</td>
+		<td><%= status_tag(@pages.visible) %>	</td>
 	</tr>
 	<tr>
 		<th>Created	</th>
