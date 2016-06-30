@@ -1,5 +1,5 @@
 class DemoController < ApplicationController
-  layout false
+
   def index
   	
   end
@@ -14,5 +14,8 @@ class DemoController < ApplicationController
   end
   def lynda
   	redirect_to("http://google.com")
+  end
+  def text_helpers
+    
   end
 end

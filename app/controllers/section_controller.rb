@@ -1,4 +1,5 @@
 class SectionController < ApplicationController
+  layout "admin"
   def index
       @sections = Section.sorted
   end
@@ -35,14 +36,15 @@ class SectionController < ApplicationController
     end
   end
 
-  def delete
-    @sections = Section.find(params[:id])
-  end
+
 
   def destroy
      sections = Section.find(params[:id]).destroy
-    flash[:notice]= "Section #{section.name} destroyed successfully"
+    flash[:notice]= "Section #{sections.name} destroyed successfully"
     redirect_to(:action => 'index')
+  end 
+   def delete
+    @sections = Section.find(params[:id])
   end
 
    private
@@ -51,3 +53,4 @@ class SectionController < ApplicationController
     
   end
 end
+
