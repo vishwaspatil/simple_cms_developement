@@ -1,8 +1,10 @@
 <% @page_title = "Subjects" %>
 <div class= "subject index">
 	<h2>Subjects</h2>
-	 <%= link_to "Add new subject",{ :action => 'new'}, :class_name => 'action new'  %>
+	
+	 <%= link_to(image_tag('plus_sign', :height => "18", :width => "18", :alt => '+') + " Add new subject",{ :action => 'new'}, :class_name => 'action new' ) %>
 	 <div><%= pluralize(@subject.size,'subject')%>Found</div>
+
 	 <table class="listing" summary="subject list">
 	 	<tr class="header">
 		 	<th>&nbsp;</th>
