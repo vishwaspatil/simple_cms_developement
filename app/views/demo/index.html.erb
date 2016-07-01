@@ -6,3 +6,11 @@
 
 <br>
 <%= link_to "hello page 2",  :action => "hello" , :id => 5 , :page => 10 %>
+
+<% name = "wish"%>
+<%= link_to('Roar','#', :onclick => "jsRoar('#{name}'); return true;") %>
+
+<%= javascript_tag("jsRoar(#{name});") %>
+
+<%= javascript_tag("vish();") %>
+
