@@ -1,11 +1,12 @@
-
  <%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
- <div class="section new">
- 	<h2>Create section</h2>
- 	<%= form_for(:sections, :url => { :action => 'create' } ) do |f| %>
+
+
+ <div class="admin edit">
+ 	<h2>update Admin info</h2>
+ 	<%= form_for(:adminuser, :url => { :action => 'update', :id => @adminuser.id } ) do |f| %>
  		<%= render(:partial => "form", :locals => {:f => f})%>
  		<div class="form buttons">
- 			<%= submit_tag("Create section")%>
+ 			<%= submit_tag("update adminuser")%>
  		</div>
  	<% end %>
  </div>

@@ -1,0 +1,30 @@
+<% @page_title = "Admins" %>
+<div class= "Admin index">
+	<h2>Admin</h2>
+	
+	 <%= link_to(image_tag('plus_sign', :height => "18", :width => "18", :alt => '+') + " Add new admin",{ :action => 'new'}, :class_name => 'action new' ) %>
+	 <div><%= pluralize(@adminuser.size,'adminuser')%>Found</div>
+
+	 <table class="listing" summary="admin list">
+	 	<tr class="header">
+		 	<th>First Name</th>
+		 	<th>Last name</th>
+		 	<th>Email</th>
+		 	<th>username </th>
+		 	<th>Actions</th>
+	 	</tr>
+	 	<% @adminuser.each do |adminuser| %>
+	 	<tr class="<% cycle('odd','even')%>">
+	 		<td><%= adminuser.first_name %></td>
+	 		<td><%= adminuser.last_name %></td>
+	 		<td><%= adminuser.Email %></td>
+	 		<td><%= adminuser.username %></td>
+	 		<td class="action">
+	 			 <%= link_to "show", {:action => 'show', :id => adminuser.id }, :class_name => "action_show" %>
+	 			 <%= link_to "edit", { :action => 'edit', :id => adminuser.id}, :class_name => "action_edit" %>
+	 			<%= link_to "delete", {:action => 'delete', :id => adminuser.id}, :class_name => "action_delete" %>
+	 		</td>
+	 	</tr>
+	 	<% end %>
+	 </table>
+</div>
