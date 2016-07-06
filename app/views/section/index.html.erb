@@ -1,7 +1,8 @@
+<%= link_to "Back to pages",{ :controller => 'pages', :action => 'index' , :subject_id => params[:subject_id]} , :class => 'back-link'  %>
 
 <div class= "section index">
 	<h2>Sections</h2>
-	 <%= link_to "Add new section",{ :action => 'new'}, :class_name => 'action new'  %>
+	 <%= link_to "Add new section",{ :action => 'new', :page_id => @page.id }, :class  => 'action new'  %>
 	 <table class="listing" summary="section list">
 	 	<tr class="header">
 		 	<th>&nbsp;</th>
@@ -21,9 +22,10 @@
 	 		<td><%= section.content_type %></td>
 	 		<td><%= section.content %></td>
 	 		<td class="action">
-	 			 <%= link_to "show", {:action => 'show', :id => section.id }, :class_name => "action_show" %>
-	 			 <%= link_to "edit", { :action => 'edit', :id => section.id}, :class_name => "action_edit" %>
-	 			<%= link_to "delete", {:action => 'delete', :id => section.id}, :class_name => "action_delete" %>
+	 			
+	 			 <%= link_to "show", {:action => 'show', :id => section.id, :page_id => @page.id }, :class => "action show" %>
+	 			 <%= link_to "edit", { :action => 'edit', :id => section.id, :page_id => @page.id}, :class => "action edit" %>
+	 			<%= link_to "delete", {:action => 'delete', :id => section.id, :page_id => @page.id}, :class => "action delete" %>
 	 		</td>
 	 	</tr>
 	 	<% end %>

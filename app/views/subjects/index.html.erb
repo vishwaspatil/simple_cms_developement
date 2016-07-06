@@ -1,4 +1,6 @@
 <% @page_title = "Subjects" %>
+<%= link_to "Back to menus",{ :controller => 'access', :action => 'index'} , :class => 'back-link'  %>
+
 <div class= "subject index">
 	<h2>Subjects</h2>
 	
@@ -19,10 +21,11 @@
 	 		<td><%= subject.name %></td>
 	 		<td><%= status_tag(subject.visible) %></td>
 	 		<td><%= subject.pages.size %></td>
-	 		<td class="action">
-	 			 <%= link_to "show", {:action => 'show', :id => subject.id }, :class_name => "action_show" %>
-	 			 <%= link_to "edit", { :action => 'edit', :id => subject.id}, :class_name => "action_edit" %>
-	 			<%= link_to "delete", {:action => 'delete', :id => subject.id}, :class_name => "action_delete" %>
+	 		<td class="actions">
+	 			 <%= link_to "show pages", {:controller => 'pages', :subject_id => subject.id }, :class => "action show" %>
+	 			 <%= link_to "show", {:action => 'show', :id => subject.id }, :class => "action show" %>
+	 			 <%= link_to "edit", { :action => 'edit', :id => subject.id}, :class => "action edit" %>
+	 			<%= link_to "delete", {:action => 'delete', :id => subject.id}, :class => "action delete" %>
 	 		</td>
 	 	</tr>
 	 	<% end %>

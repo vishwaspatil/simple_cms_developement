@@ -1,5 +1,6 @@
 class AdminUserController < ApplicationController
   layout 'admin'
+  before_action :confirm_logged_in
   def index
      @adminuser = AdminUser.sorted
   end
@@ -28,8 +29,8 @@ class AdminUserController < ApplicationController
   def update
     @adminuser = AdminUser.find(params[:id])
     if @adminuser.update_attributes(adminuser_params)
-      flash[:notice]= "admin updated successfully"
-      redirect_to(:action => 'show', :id => @adminuser.id)
+      flash[:notice]= "Admin User updated successfully"
+      redirect_to(:action => 'index', :id => @adminuser.id)
     else
       @admin_count = AdminUser.count
       render ('edit')
@@ -42,21 +43,13 @@ class AdminUserController < ApplicationController
 
   def destroy
     adminuser = AdminUser.find(params[:id]).destroy
-    flash[:notice]= "admin #{AdminUser.first_name} destroyed successfully"
+    flash[:notice]= "admin #{adminuser.first_name} destroyed successfully"
     redirect_to(:action => 'index')
   end
 
-  def show_first_name
-         @adminusers = AdminUser.find(params[:sorted])
-  end
-  def show_last_name
-    @adminusers = AdminUser.find(params[:unorder])
-
-  end
-
-   private
+ 
+  private
   def adminuser_params
-    params.require(:adminuser).permit(:first_name , :last_name, :Email, :username)
-    
+    params.require(:adminuser).permit(:first_name , :last_name, :Email, :username, :password)    
   end
 end

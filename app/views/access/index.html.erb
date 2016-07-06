@@ -6,20 +6,14 @@
 		Admin Menu
 	</h2>
 	<div class="identity">
-		Logged in as:
+		Logged in as: <%= session[:username]%>
 	</div>
 	<ul>
 		<li>
 			<%= link_to("Manage Subjects", :controller => 'subjects')%>
-		</li>
+		</li>		
 		<li>
-			<%= link_to("Manage pages", :controller => 'pages')%>
-		</li>
-		<li>
-			<%= link_to("Manage Sections", :controller => 'section')%>
-		</li>
-		<li>
-			<%= link_to("Manage AdminUsers", :controller => 'adminusers')%>
+			<%= link_to("Manage AdminUsers", :controller => 'admin_user')%>
 		</li>
 		<li>
 			<%= link_to("Logout", :controller => 'access/logout')%>

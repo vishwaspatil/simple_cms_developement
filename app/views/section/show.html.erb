@@ -1,5 +1,5 @@
 
-<%= link_to "<< back to list", :action => "index", :class => "back_link" %>
+<%= link_to "<< back to list", :action => "index",:page_id => @page.id, :class => "back_link" %>
 <div class="section show">
 	<h2>Show section</h2>
 	<table summary="section detail view">

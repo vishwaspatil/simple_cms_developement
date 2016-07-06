@@ -1,9 +1,9 @@
 
-<%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
+<%= link_to "<< back to list" , {:action => 'index', :page_id => @page.id}, :class => 'back_link' %>
 <div class="section delete">
 	<h2>Sections deletes</h2>
 
-	<%= form_for(:sections, :url => { :action => 'destroy', :id => @sections.id } ) do |f| %>
+	<%= form_for(:sections, :url => { :action => 'destroy', :id => @sections.id, :page_id => @page.id} ) do |f| %>
 		<p>are you sure you want delete this section?</p>
 		<p class="reference-name"> <%= @sections.name%></p>
 		<div class="form-buttons">

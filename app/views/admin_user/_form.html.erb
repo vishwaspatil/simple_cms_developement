@@ -1,5 +1,5 @@
-<%= error_messages_for @subject%>
-<table summary="Subject form field">
+<%= error_messages_for @adminuser%>
+<table summary="Adminuser field">
 	<tr>
 		<th> <%= f.label(:first_name, "First Name") %> </th>
 		<td><%= f.text_field(:first_name) %></td>
@@ -13,8 +13,8 @@
 		<td><%= f.text_field(:Email) %></td>
 	</tr>
 	<tr>
-		<th><%= f.label(:username , "Email" )%></th>
+		<th><%= f.label(:username , "Username" )%></th>
 		<td><%= f.text_field(:username) %></td>
-	</tr>
-	
+	</tr>		
+		
  </table>

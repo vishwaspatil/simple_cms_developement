@@ -30,8 +30,8 @@ class AdminUser < ActiveRecord::Base
 
 	validates :Email , :presence => true , :length => {:maximum => 25} , :format => EMAIL_REGEX , :confirmation => true
 
-	scope :sorted, lambda { order("adminusers.position ASC") }
+	scope :sorted, lambda { order("admin_users.first_name ASC") }
 
-	scope :unsorted, lambda { order("adminusers.position DESC") }
+	# scope :unsorted, lambda { order("adminusers.position DESC") }
 
 end

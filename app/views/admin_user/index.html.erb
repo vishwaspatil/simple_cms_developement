@@ -20,8 +20,7 @@
 	 		<td><%= adminuser.Email %></td>
 	 		<td><%= adminuser.username %></td>
 	 		<td class="action">
-	 			 <%= link_to "show", {:action => 'show', :id => adminuser.id }, :class_name => "action_show" %>
-	 			 <%= link_to "edit", { :action => 'edit', :id => adminuser.id}, :class_name => "action_edit" %>
+	 			<%= link_to "edit", { :action => 'edit', :id => adminuser.id}, :class_name => "action_edit" %>
 	 			<%= link_to "delete", {:action => 'delete', :id => adminuser.id}, :class_name => "action_delete" %>
 	 		</td>
 	 	</tr>

@@ -1,10 +1,10 @@
 <%= error_messages_for @sections %>
- <%= link_to "<< back to list" , {:action => 'index'}, :class => 'back_link' %>
+ <%= link_to "<< back to list" , {:action => 'index', :page_id => @page.id}, :class => 'back_link' %>
 
 
  <div class="section edit">
  	<h2>update sections</h2>
- 	<%= form_for(:sections, :url => { :action => 'update', :id => @sections.id } ) do |f| %>
+ 	<%= form_for(:sections, :url => { :action => 'update', :id => @sections.id, :page_id => @page.id } ) do |f| %>
  		<%= render(:partial => "form", :locals => {:f => f})%>
  		<div class="form buttons">
  			<%= submit_tag("update Section")%>
